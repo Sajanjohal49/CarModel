@@ -25,7 +25,7 @@ const Navbar = () => {
       </h1>
       <div className="menu-icon" onClick={handleClick}>
         {/* <i className={active ? "fas fa-times" : "fas fa-bars"}></i> */}
-        <MenuImage src={active ? logo:logo} alt="Logo"/>
+        <Image src={active ? logo:logo} alt="Logo"/>
        
 
         
@@ -60,10 +60,10 @@ height:5rem;
 
 
 `
-const MenuImage =styled.img`
-width:2.67rem;
-height: 2.67rem;
-position: absolute;
-right: 0px;
-padding: 10px;
-`
+// const MenuImage =styled.img`
+// width:2.67rem;
+// height: 2.67rem;
+// position: absolute;
+// right: 0px;
+// padding: 10px;
+// `

@@ -1,141 +1,100 @@
-import { motion, AnimatePresence } from "framer-motion"
-import * as React from "react"
-import { useState } from "react"
-import { wrap } from "popmotion"
 
-/**
- * An example of a single-image, single-child image gallery using AnimatePresence
- */
-
-const variants = {
-    enter: (delta) => ({
-        x: delta > 0 ? 1000 : -1000,
-        opacity: 0,
-    }),
-    center: {
-        zIndex: 1,
-        x: 0,
-        opacity: 1,
+import  CarouselData  from "./CarouselData";
+import './carousel.css'
+export function Carousel() {
+  const data = [
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
+      caption: `<div>
+        San Francisco<br/><span>Next line</span>
+      </div>`,
     },
-    exit: (delta) => ({
-        zIndex: 0,
-        x: delta < 0 ? 1000 : -1000,
-        opacity: 0,
-    }),
-}
+    {
+      image:
+        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
+      caption: "Darjeeling",
+    },
+    {
+      image:
+        "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
+      caption: "<div>San Francisco</div>",
+    },
+    {
+      image:
+        "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
+      caption: "<div>San Francisco</div>",
+    },
+  ];
 
-
-const Image = ({ src, paginate, delta }) => (
-    <motion.img
-        src={src}
-        custom={delta}
-        variants={variants}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={1}
-        transition={{
-            duration: 2,
-        }}
-        onDragEnd={(e, { offset, velocity }) => {
-            const swipe = Math.abs(offset.x) * velocity.x
-
-            if (swipe < -10000) {
-                paginate(1)
-            } else if (swipe > 10000) {
-                paginate(-1)
-            }
-        }}
-    />
-)
-
- export  const Carousel = () => {
-    const [[page, delta], setPage] = useState([0, 0])
-    const imageIndex = wrap(0, images.length, page)
-
-    const paginate = (newDelta) => {
-        setPage([page + newDelta, newDelta])
-    }
-
-    return (
-        <div className="example-container">
-            <AnimatePresence initial={false} custom={delta}>
-                <Image
-                    delta={delta}
-                    paginate={paginate}
-                    src={images[imageIndex]}
-                    key={page}
-                />
-            </AnimatePresence>
-            <div className="next" onClick={() => paginate(1)}>
-                {">"}
-            </div>
-            <div className="prev" onClick={() => paginate(-1)}>
-                {"<"}
-            </div>
-            <style>{`
-.example-container {
-  width: 80vw;
-  height: 80vh;
-  margin: 0px auto;
-  position: relative;
-  display: flex;
-  padding-top:10vh;
-  justify-content: center;
-  align-items: center;
-}
-
-.next,
-.prev {
-  top: 50%;
-  position: absolute;
-  background: white;
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev {
-  left: 10px;
-}
-
-
-
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-`}</style>
+  const captionStyle = {
+    fontSize: "2em",
+    fontWeight: "bold",
+  };
+  const slideNumberStyle = {
+    fontSize: "20px",
+    fontWeight: "bold",
+  };
+  return (
+    <div className="App">
+      <div style={{ textAlign: "center", margin:'0px auto' }}>
+        <div
+          style={{
+   
+            margin:"0 auto"
+          }}
+        >
+          <CarouselData
+            data={data}
+            time={6000}
+          
+            captionStyle={captionStyle}
+            radius="10px"
+            slideNumber={true}
+            slideNumberStyle={slideNumberStyle}
+            captionPosition="bottom"
+            automatic={true}
+            dots={true}
+            pauseIconColor="white"
+            pauseIconSize="40px"
+            slideBackgroundColor="darkgrey"
+            slideImageFit="cover"
+            thumbnails={true}
+            thumbnailWidth="120px"
+            showNavBtn={true}
+            style={{
+              textAlign: "center",
+             
+             
+            }}
+          />
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-
-const images = [
-    "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-    "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-    "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-]

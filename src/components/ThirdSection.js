@@ -26,12 +26,14 @@ Vision Vehicle
 
 export default ThirdSection;
 const Wrapper =styled.div`
-
-`
-const Text=styled.div`
 position: relative;
 width:80%;
-margin:200px auto 0px;
+margin:200px auto 160px;
+
+height:350px;
+`
+const Text=styled.div`
+
 .p1{
     font-size:14px;
     text-transform: uppercase;
@@ -39,6 +41,7 @@ margin:200px auto 0px;
 
 }
 .p3{
+    padding: 30px 0px;
     font-size:18px;
     font-weight: 600;
     max-width:350px;
