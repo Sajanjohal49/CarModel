@@ -108,6 +108,7 @@
     return (
       <div style={style} className="box">
         <div
+        className="boxWrapper"
           style={{
             maxWidth: width ? width : "1500px",
             maxHeight: height ? height : "600px",

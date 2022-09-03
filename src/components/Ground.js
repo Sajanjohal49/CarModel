@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
+import {  RepeatWrapping, sRGBEncoding, TextureLoader } from "three";
 
 const Ground = () => {
     const [roughness, normal] = useLoader(TextureLoader, [
@@ -17,7 +17,8 @@ const Ground = () => {
           t.offset.set(0, 0);
         });
         // normal.encoding = sRGBEncoding
-        normal.encoding = LinearEncoding;
+        // lineaEncoding
+        normal.encoding = sRGBEncoding; 
       }, [normal, roughness]);
     
       useFrame((state, delta) => {

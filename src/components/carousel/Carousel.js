@@ -1,54 +1,45 @@
-
-import  CarouselData  from "./CarouselData";
-import './carousel.css'
+import CarouselData from "./CarouselData";
+import "./carousel.css";
 export function Carousel() {
   const data = [
     {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-      caption: `<div>
-        San Francisco<br/><span>Next line</span>
-      </div>`,
+      image: "https://wallpaper.dog/large/20508493.jpg",
+      caption: "GTR",
+    },
+    {
+      image: "https://wallpapercave.com/wp/wp2013221.jpg",
+      caption: "GTR",
     },
     {
       image:
-        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
-      caption: "<div>San Francisco</div>",
+        "https://images.hdqwalls.com/wallpapers/nissan-skyline-gt-r-r34-need-for-speed-4k-xy.jpg",
+      caption: "GTR",
     },
     {
       image:
-        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-      caption: "<div>San Francisco</div>",
+        "https://p4.wallpaperbetter.com/wallpaper/3/838/547/nissan-skyline-nismo-nissan-skyline-gt-r-r34-nismo-z-tune-wallpaper-preview.jpg",
+      caption: "GTR",
+    },
+    {
+      image: "https://wallpapercave.com/wp/ZtylyXh.jpg",
+      caption: "GTR",
+    },
+    {
+      image: "https://wallpaper.dog/large/20498644.jpg",
+      caption: "GTR",
+    },
+    {
+      image: "https://www.nawpic.com/media/2020/gtr-nawpic-15.jpg",
+      caption: "GTR",
+    },
+    {
+      image: "https://wallpapercave.com/wp/qxJOJ4p.jpg",
+      caption: "GTR",
     },
     {
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
-      caption: "<div>San Francisco</div>",
-    },
-    {
-      image:
-        "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
-      caption: "<div>San Francisco</div>",
-    },
-    {
-      image:
-        "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
-      caption: "Darjeeling",
-    },
-    {
-      image:
-        "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
-      caption: "<div>San Francisco</div>",
-    },
-    {
-      image:
-        "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
-      caption: "<div>San Francisco</div>",
-    },
-    {
-      image:
-        "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
-      caption: "<div>San Francisco</div>",
+        "https://cutewallpaper.org/22/nissan-gtr-r34-desktop-wallpapers/1811310111.jpg",
+      caption: "GTR",
     },
   ];
 
@@ -62,17 +53,15 @@ export function Carousel() {
   };
   return (
     <div className="App">
-      <div style={{ textAlign: "center", margin:'0px auto' }}>
+      <div style={{ textAlign: "center", margin: "60px auto" }}>
         <div
           style={{
-   
-            margin:"0 auto"
+            margin: "0 auto",
           }}
         >
           <CarouselData
             data={data}
             time={6000}
-          
             captionStyle={captionStyle}
             radius="10px"
             slideNumber={true}
@@ -89,8 +78,6 @@ export function Carousel() {
             showNavBtn={true}
             style={{
               textAlign: "center",
-             
-             
             }}
           />
         </div>

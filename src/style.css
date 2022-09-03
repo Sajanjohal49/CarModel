@@ -28,3 +28,12 @@ canvas {
   line-height: 1;
   font-family: 'Antonio', sans-serif;
 }
+@media (max-width:768px){
+  .title{
+    font-size: 30px;
+  }
+  .p2{
+    font-size: 40px;
+  }
+  
+}
