@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import {  RepeatWrapping, sRGBEncoding, TextureLoader } from "three";
+import {  sRGBEncoding, RepeatWrapping,   TextureLoader } from "three";
+
 
 const Ground = () => {
     const [roughness, normal] = useLoader(TextureLoader, [
-        process.env.PUBLIC_URL + "textures/terrain-rough.jpg",
+      process.env.PUBLIC_URL + "textures/terrain-rough.jpg",
         process.env.PUBLIC_URL + "textures/terrain-normal.jpg",
       ]);
     
@@ -18,7 +19,7 @@ const Ground = () => {
         });
         // normal.encoding = sRGBEncoding
         // lineaEncoding
-        normal.encoding = sRGBEncoding; 
+        normal.encoding = sRGBEncoding;
       }, [normal, roughness]);
     
       useFrame((state, delta) => {

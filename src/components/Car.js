@@ -22,10 +22,11 @@ export function Car() {
 // gltf.scene.scale.set(0.97, 0.90, 0.90);
 //     gltf.scene.position.set(0, -0.035, 0.4);
 //
-    gltf.scene.rotateY( Math.PI / 1 );
+    
     //skyline
       gltf.scene.scale.set(0.002, 0.002, 0.002);
     gltf.scene.position.set(0, -0.035, 0.4);
+    gltf.scene.rotateY( Math.PI / 1 );
     // gltf.scene.scale.set(0.90, 0.90, 0.90);
     // gltf.scene.position.set(0, -0.035, 0.4);
     

@@ -6,9 +6,9 @@ import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Models", href: "/models", current: true },
-  { name: "Build Your Own", href: "/modelDetails", current: false },
-  { name: "Nissan Certified", href: "#", current: false },
+  { name: "Models", href: "/models", current: false },
+  { name: "Build Your Own", href: "/customModel", current: false },
+  { name: "3D Model", href: "/threeModel", current: false },
   { name: "Contact Us", href: "#", current: false },
 ];
 
@@ -18,7 +18,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-gray-900">
+    <Disclosure as="nav" className="bg-transparent">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12">
