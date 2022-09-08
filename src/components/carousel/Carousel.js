@@ -61,7 +61,7 @@ export function Carousel() {
         >
           <CarouselData
             data={data}
-            time={6000}
+            time={2000}
             captionStyle={captionStyle}
             radius="10px"
             slideNumber={true}

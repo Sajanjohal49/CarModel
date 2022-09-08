@@ -5,7 +5,8 @@ import Models from "./routes/Models";
 import Navbar from "./components/navbar/Navbar";
 import { ModelDetails } from "./routes/ModelDetails";
 import ThreeModel from "./routes/ThreeModel";
-import CustomModel from "./routes/CustomModel";
+import ContactUs from "./routes/ContactUs";
+
 
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/models" element={<Models />} />
         <Route path="/models/:modelId" element={<ModelDetails/>}/>
-        <Route path="/customModel" element={<CustomModel/>}/>
+      <Route path="/contactus" element={<ContactUs/>}/>
         <Route path="/threeModel" element={<ThreeModel/>}/>
       </Routes>
     </BrowserRouter>

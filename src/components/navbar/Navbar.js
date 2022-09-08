@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Models", href: "/models", current: false },
-  { name: "Build Your Own", href: "/customModel", current: false },
   { name: "3D Model", href: "/threeModel", current: false },
-  { name: "Contact Us", href: "#", current: false },
+  { name: "Contact Us", href: "/contactus", current: false },
 ];
 
 function classNames(...classes) {
@@ -56,7 +55,7 @@ export default function Example() {
                   </Link>
                 
                 </div>
-                <div className="hidden absolute  right-0  flex items-center  sm:ml-6 sm:block">
+                <div className="hidden absolute  right-0  flex items-center   sm:ml-6 sm:block">
                   <div className="flex space-x-14">
                     {navigation.map((item) => (
                       <Link
@@ -64,8 +63,8 @@ export default function Example() {
                         to={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            ? "bg-gray-900 text-white "
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white lg:font-light lg:text-lg",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -142,7 +141,7 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white"
+                      ? "bg-gray-900 text-white "
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
