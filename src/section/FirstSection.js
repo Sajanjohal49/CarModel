@@ -2,45 +2,62 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import sky2 from "../carMedia/sky2.jpg";
 import "../style.css";
-import { AiOutlineArrowDown } from "react-icons/ai";
+import { motion } from "framer-motion";
+const container = {
+  offscreen: { opacity: 0,  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+ 
+};
+const itemVariants = {
+  offscreen: {
+    y: 100,
+    opacity: 0,
+
+  },
+  onscreen: {
+    y: 50,
+    opacity: 1,
+    // rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.1,
+      duration: 0.7
+    }
+  }
+};
 const IntroSection = () => {
   const ref = useRef(null);
 
-  const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const handleClick = () => {
+  //   ref.current?.scrollIntoView({ behavior: "smooth" });
+  // };
   return (
-    <Wrapper>
-     
-        <button
-          onClick={handleClick}
-          className="absolute   -right-4 -top-80 bg-rose-900 items-center text-white text-xl px-6 py-2 invisible  "
-        >
-          <AiOutlineArrowDown />
-        </button>
-      
-        <button
-        onClick={handleClick}
-        className="absolute   -left-4 -top-80 bg-rose-900 items-center text-white text-xl px-6 py-2  invisible " >
-          
-          <AiOutlineArrowDown />
-        </button>
-      
-
+    <Wrapper className='mx-auto max-w-screen-2xl'>
       <Text ref={ref}>
-        <hr />
-        <p className="p1 text-slate-200 ">
-          With more than 20 Years of knowledge and experience,Genuine
-          Accessories always stands for quality
-        </p>
-        <p className="para2">
-          Developed with the whole vehicle in mind and tailored to your skyline
-          Gtr. High quality products that allow yout ton easily adapt your
-          Nissan to your requirements
-        </p>
-        <p className="p3 text-slate-100">
-          <span className="stroke">Nissan</span> Skyline GT-R R34
-        </p>
+        <motion.div  
+        variants={container}
+        initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}>
+          
+          <motion.p variants={itemVariants} className="p1 text-slate-200 ">
+            With more than 20 Years of knowledge and experience,Genuine
+            Accessories always stands for quality
+          </motion.p>
+          <motion.p variants={itemVariants} className="para2">
+            Developed with the whole vehicle in mind and tailored to your
+            skyline Gtr. High quality products that allow yout ton easily adapt
+            your Nissan to your requirements
+          </motion.p>
+          <motion.p variants={itemVariants} className="p3 text-slate-100">
+            <span className="stroke">Nissan</span> Skyline GT-R R34
+          </motion.p>
+        </motion.div>
       </Text>
       <Image className="" src={sky2} alt="sky2" />
     </Wrapper>

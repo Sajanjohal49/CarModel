@@ -11,8 +11,8 @@ const MainSection = () => {
 
       <motion.div className="absolute top-1/2 left-[10%]     ">
         <motion.h1
-          initial={{ x: -500 }}
-          animate={{ x: 0 }}
+          initial={{ x: -500, opacity:0}}
+          animate={{ x: 0,opacity:1 }}
           transition={{
             ease: "easeIn",
             duration: 0.7,
@@ -27,8 +27,8 @@ const MainSection = () => {
         <Link to="/models/1">
           
             <motion.button
-              initial={{ x: -500 }}
-              animate={{ x: 0 }}
+              initial={{ x: -500,opacity:0 }}
+              animate={{ x: 0 ,opacity:1}}
               transition={{
                 ease: "easeIn",
                 duration: 0.2,

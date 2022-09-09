@@ -4,18 +4,57 @@ import banner from "../carMedia/sky1.1.jpg";
 
 import interior1 from "../carMedia/interior1.jpg";
 import interior2 from "../carMedia/interior2.jpg";
+import { motion } from "framer-motion";
+const container = {
+  offscreen: { opacity: 0,  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+ 
+};
+const itemVariants = {
+  offscreen: {
+    scale:0.5,
+    opacity: 0,
+    y:-50,
+
+  },
+  onscreen: {
+    scale:1,
+    opacity: 1,
+    y:100,
+    // rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.1,
+      duration: 0.3
+    }
+  }
+};
 const HeroSection = () => {
   return (
-    <Wrapper>
+    <Wrapper className="sm:mt-12 mx-auto max-w-screen-2xl">
       <Image src={banner} alt="banner" />
       <Text>
-        <p className="title">
-          Gran Turismo
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="para2">AND SKYLINE</span>
-        </p>
+        <motion.div
+        variants={container}
+        initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.4 }}
+        >
+        <motion.p className="title"
+        
+        variants={itemVariants}
+       >
+          Skyline GT-R</motion.p>
+         
+        
+        </motion.div>
       </Text>
-      <Image2 src={interior1} alt="interior" />
+      <Image2  src={interior1} alt="interior" />
       <Image3 src={interior2} alt="interior" />
     </Wrapper>
   );
@@ -38,12 +77,9 @@ const Image = styled.img`
 `;
 
 const Text = styled.div`
-.para2{
-  @media (max-width:1024px) {
-    visibility: hidden;
-  }
+
  
-}
+
 `;
 const Image2 = styled.img`
   /* border-radius: 10px; */

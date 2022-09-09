@@ -52,8 +52,8 @@ export function Carousel() {
     fontWeight: "bold",
   };
   return (
-    <div className="App">
-      <div style={{ textAlign: "center", margin: "60px auto" }}>
+    <div className="App ">
+      <div style={{ textAlign: "center", margin: "0px auto" }}>
         <div
           style={{
             margin: "0 auto",
