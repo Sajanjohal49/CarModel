@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
+import { motion } from "framer-motion";
 
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -20,7 +21,10 @@ export default function Example() {
     <Disclosure as="nav" className="bg-transparent">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12">
+          <motion.div
+          
+            className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12"
+          >
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -41,19 +45,18 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to='/'>
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkmbCfDsmfi8AkQUDgt3rWqNqlpCOk8pJJoxpXue3SFuF8gaQv4WiHHdmew_zhshjNpA&usqp=CAU"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkmbCfDsmfi8AkQUDgt3rWqNqlpCOk8pJJoxpXue3SFuF8gaQv4WiHHdmew_zhshjNpA&usqp=CAU"
-                    alt="Workflow"
-                  />
+                  <Link to="/">
+                    <img
+                      className="block h-8 w-auto lg:hidden"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkmbCfDsmfi8AkQUDgt3rWqNqlpCOk8pJJoxpXue3SFuF8gaQv4WiHHdmew_zhshjNpA&usqp=CAU"
+                      alt="Workflow"
+                    />
+                    <img
+                      className="hidden h-8 w-auto lg:block"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkmbCfDsmfi8AkQUDgt3rWqNqlpCOk8pJJoxpXue3SFuF8gaQv4WiHHdmew_zhshjNpA&usqp=CAU"
+                      alt="Workflow"
+                    />
                   </Link>
-                
                 </div>
                 <div className="hidden absolute  right-0  flex items-center   sm:ml-6 sm:block">
                   <div className="flex space-x-14">
@@ -130,7 +133,7 @@ export default function Example() {
                 </Menu> */}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">

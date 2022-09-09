@@ -20,6 +20,7 @@ export default function Loader() {
         <a.div className="loading" style={{ opacity }}>
           <div className="loading-bar-container">
             <a.div className="loading-bar" style={{ width: progress }}></a.div>
+            <p className="text-white font-extralight text-base">Please wait ...</p>
           </div>
         </a.div>
       )
