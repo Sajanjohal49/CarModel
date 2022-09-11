@@ -1,32 +1,33 @@
-import React, { useEffect } from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
-import { MeshReflectorMaterial } from "@react-three/drei";
-import {  sRGBEncoding, RepeatWrapping,   TextureLoader } from "three";
-
+import React, { useEffect } from 'react';
+import { useFrame, useLoader } from '@react-three/fiber';
+import { MeshReflectorMaterial } from '@react-three/drei';
+import { RepeatWrapping, TextureLoader, LinearEncoding } from 'three';
 
 const Ground = () => {
-    const [roughness, normal] = useLoader(TextureLoader, [
-      process.env.PUBLIC_URL + "textures/terrain-rough.jpg",
-        process.env.PUBLIC_URL + "textures/terrain-normal.jpg",
-      ]);
-    
-      useEffect(() => {
-        [normal, roughness].forEach((t) => {
-          t.wrapS = RepeatWrapping;
-          t.wrapT = RepeatWrapping;
-          t.repeat.set(5,5 );
-          t.offset.set(0, 0);
-        });
-        // normal.encoding = sRGBEncoding
-        // lineaEncoding
-        normal.encoding = sRGBEncoding;
-      }, [normal, roughness]);
-    
-      useFrame((state, delta) => {
-        let t = -state.clock.getElapsedTime() * 0.128;
-        roughness.offset.set(0, t % 1);
-        normal.offset.set(0, t % 1);
-      });
+  const [roughness, normal] = useLoader(TextureLoader, [
+    process.env.PUBLIC_URL + 'textures/terrain-rough.jpg',
+    process.env.PUBLIC_URL + 'textures/terrain-normal.jpg',
+  ]);
+
+  useEffect(() => {
+    [normal, roughness].forEach((t) => {
+      t.wrapS = RepeatWrapping;
+      t.wrapT = RepeatWrapping;
+
+      t.repeat.set(5, 5);
+      t.offset.set(0, 0);
+    });
+    // normal.encoding = sRGBEncoding
+    // lineaEncoding
+    normal.encoding = LinearEncoding;
+    roughness.encoding = LinearEncoding;
+  }, [normal, roughness]);
+
+  useFrame((state, delta) => {
+    let t = -state.clock.getElapsedTime() * 0.128;
+    roughness.offset.set(0, t % 1);
+    normal.offset.set(0, t % 1);
+  });
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
       <planeGeometry args={[30, 30]} />
@@ -50,9 +51,11 @@ const Ground = () => {
         depthToBlurRatioBias={0.25} // Adds a bias factor to the depthTexture before calculating the blur amount [blurFactor = blurTexture * (depthTexture + bias)]. It accepts values between 0 and 1, default is 0.25. An amount > 0 of bias makes sure that the blurTexture is not too sharp because of the multiplication with the depthTexture
         debug={0}
         reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
+
+        // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
       />
     </mesh>
-  )
-}
+  );
+};
 
-export default Ground
+export default Ground;

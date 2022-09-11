@@ -1,34 +1,32 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
-import sky2 from "../carMedia/sky2.jpg";
-import "../style.css";
-import { motion } from "framer-motion";
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import sky2 from '../carMedia/sky2.jpg';
+import '../style.css';
+import { motion } from 'framer-motion';
 const container = {
-  offscreen: { opacity: 0,  },
+  offscreen: { opacity: 0 },
   onscreen: {
     opacity: 1,
     transition: {
       staggerChildren: 0.4,
     },
   },
- 
 };
 const itemVariants = {
   offscreen: {
     y: 100,
     opacity: 0,
-
   },
   onscreen: {
     y: 50,
     opacity: 1,
     // rotate: -10,
     transition: {
-      type: "spring",
+      type: 'spring',
       bounce: 0.1,
-      duration: 0.7
-    }
-  }
+      duration: 0.7,
+    },
+  },
 };
 const IntroSection = () => {
   const ref = useRef(null);
@@ -37,29 +35,40 @@ const IntroSection = () => {
   //   ref.current?.scrollIntoView({ behavior: "smooth" });
   // };
   return (
-    <Wrapper className='mx-auto max-w-screen-2xl'>
-      <Text ref={ref}>
-        <motion.div  
-        variants={container}
-        initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}>
-          
-          <motion.p variants={itemVariants} className="p1 text-slate-200 ">
-            With more than 20 Years of knowledge and experience,Genuine
-            Accessories always stands for quality
-          </motion.p>
-          <motion.p variants={itemVariants} className="para2">
-            Developed with the whole vehicle in mind and tailored to your
-            skyline Gtr. High quality products that allow yout ton easily adapt
-            your Nissan to your requirements
-          </motion.p>
-          <motion.p variants={itemVariants} className="p3 text-slate-100">
-            <span className="stroke">Nissan</span> Skyline GT-R R34
-          </motion.p>
-        </motion.div>
-      </Text>
-      <Image className="" src={sky2} alt="sky2" />
+    <Wrapper className="mx-auto max-w-screen-2xl  ">
+      <div className="  px-3 py-2 lg:px-12 lg:py-6">
+        <Text ref={ref}>
+          <hr />
+          <motion.div
+            variants={container}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            <motion.p
+              variants={itemVariants}
+              className="p1 text-slate-200 my-1 "
+            >
+              While you’re researching your next new Nissan, the
+              dedicated technicians are making sure it’s got the
+              latest innovations in performance, technology and safety
+              - built-in.
+            </motion.p>
+            <motion.p variants={itemVariants} className="para2">
+              Developed with the whole vehicle in mind and tailored to
+              your skyline Gtr. High quality products that allow yout
+              ton easily adapt your Nissan to your requirements
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="p3 text-slate-100"
+            >
+              <span className="stroke">Nissan</span> Skyline GT-R R34
+            </motion.p>
+          </motion.div>
+        </Text>
+        <Image className="" src={sky2} alt="sky2" />
+      </div>
     </Wrapper>
   );
 };
@@ -67,22 +76,21 @@ const IntroSection = () => {
 export default IntroSection;
 const Wrapper = styled.div`
   position: relative;
-  margin: 70px;
+  /* margin: 70px; */
+
   height: 400px;
   @media (max-width: 1024px) {
-    height: 320px;
     margin: 0px;
   }
 `;
 const Text = styled.div`
-  margin-left: 5%;
   hr {
     display: block;
     height: 1px;
     border: 0;
     width: 20%;
     border-top: 2px solid #ba4704;
-    margin: 1em 0;
+    margin: 0.8em 0;
     padding: 0;
   }
   .p1 {
@@ -114,7 +122,7 @@ const Text = styled.div`
       padding: 10px 0 15px;
       width: 200px;
     }
-    @media (max-width: 524px) {
+    @media (max-width: 647px) {
       font-size: 1.856rem;
       padding-top: 10px;
       width: 200px;
@@ -131,7 +139,7 @@ const Image = styled.img`
   @media (max-width: 1024px) {
     position: absolute;
     right: 0;
-    bottom: 60px;
+    bottom: 30px;
   }
 `;
 // const Button = styled.button`

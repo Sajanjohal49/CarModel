@@ -1,19 +1,18 @@
-import { Canvas } from "@react-three/fiber";
-import "../style.css";
+import { Canvas } from '@react-three/fiber';
+import '../style.css';
 import {
   CubeCamera,
   Environment,
-
   OrbitControls,
   PerspectiveCamera,
-} from "@react-three/drei";
-import Ground from "../components/Ground";
-import { Car } from "../components/Car";
-import { Rings } from "../components/Rings";
+} from '@react-three/drei';
+import Ground from '../components/Ground';
+import { Car } from '../components/Car';
+import { Rings } from '../components/Rings';
 
-import { FloatingGrid } from "../components/FloatingGrid";
-import { Suspense } from "react";
-import Loader from "../components/loader/Loader";
+import { FloatingGrid } from '../components/FloatingGrid';
+import { Suspense } from 'react';
+import Loader from '../components/loader/Loader';
 function CarShow() {
   return (
     <>
@@ -59,12 +58,12 @@ function CarShow() {
 function ThreeModel() {
   return (
     <div>
-    <Suspense fallback={null}>
-      <Canvas shadows>
-        <CarShow />
-      </Canvas>
-    </Suspense>
-    <Loader/>
+      <Suspense fallback={null}>
+        <Canvas shadows>
+          <CarShow />
+        </Canvas>
+      </Suspense>
+      <Loader />
     </div>
   );
 }

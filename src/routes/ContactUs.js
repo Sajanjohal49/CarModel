@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import "tailwindcss/tailwind.css";
-import { FaWpforms } from "react-icons/fa";
+import 'tailwindcss/tailwind.css';
+import { FaWpforms } from 'react-icons/fa';
 
 export default function ContactUs() {
   return (
@@ -13,14 +13,18 @@ export default function ContactUs() {
               Contact Us
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Thank you for getting in touch, we will get back to you as soon as possible.
+              Thank you for getting in touch, we will get back to you
+              as soon as possible.
             </p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label for="name" className="leading-7 text-sm text-gray-200">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-200"
+                  >
                     Name
                   </label>
                   <input
@@ -34,7 +38,7 @@ export default function ContactUs() {
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="leading-7 text-sm text-gray-200"
                   >
                     Email
@@ -50,7 +54,7 @@ export default function ContactUs() {
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
-                    for="message"
+                    htmlFor="message"
                     className="leading-7 text-sm text-gray-200"
                   >
                     Message
@@ -64,11 +68,13 @@ export default function ContactUs() {
               </div>
               <div className="p-2 w-full grid grid-cols-1 place-items-center">
                 <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg ">
-                  Submit <FaWpforms className="self-center mx-2"/>
+                  Submit <FaWpforms className="self-center mx-2" />
                 </button>
               </div>
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <p className="text-indigo-300">sajanjohal49@gmail.com</p>
+                <p className="text-indigo-300">
+                  sajanjohal49@gmail.com
+                </p>
                 <p className="leading-normal my-5">
                   49 main St.
                   <br />
@@ -78,9 +84,9 @@ export default function ContactUs() {
                   <p className="text-gray-300">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -90,9 +96,9 @@ export default function ContactUs() {
                   <p className="ml-4 text-gray-300">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -103,9 +109,9 @@ export default function ContactUs() {
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -123,9 +129,9 @@ export default function ContactUs() {
                   <p className="ml-4 text-gray-300">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >

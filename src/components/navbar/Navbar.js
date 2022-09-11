@@ -1,19 +1,21 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Disclosure } from "@headlessui/react";
-import { motion } from "framer-motion";
+import { Fragment } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { motion } from 'framer-motion';
 
-import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: "Models", href: "/models", current: false },
-  { name: "3D Model", href: "/threeModel", current: false },
-  { name: "Contact Us", href: "/contactus", current: false },
+  { name: 'Home', href: '/', current: false },
+  { name: 'Models', href: '/models', current: false },
+
+  { name: '3D Model', href: '/threeModel', current: false },
+  { name: 'Contact', href: '/contactus', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
@@ -21,10 +23,7 @@ export default function Example() {
     <Disclosure as="nav" className="bg-transparent">
       {({ open }) => (
         <>
-          <motion.div
-          
-            className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12"
-          >
+          <motion.div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -66,11 +65,13 @@ export default function Example() {
                         to={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white "
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white lg:font-light lg:text-lg",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                            ? 'bg-gray-900 text-white '
+                            : 'text-gray-300 hover:bg-gray-700 hover:text-white lg:font-light lg:text-lg',
+                          'px-3 py-2 rounded-md text-sm font-medium'
                         )}
-                        aria-current={item.current ? "page" : undefined}
+                        aria-current={
+                          item.current ? 'page' : undefined
+                        }
                       >
                         {item.name}
                       </Link>
@@ -144,11 +145,11 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white "
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
+                      ? 'bg-gray-900 text-white '
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>

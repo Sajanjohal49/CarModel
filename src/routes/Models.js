@@ -1,9 +1,8 @@
-import React from "react";
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import modelData from "../components/Data/modelData";
-import { motion } from "framer-motion";
-
+import React from 'react';
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import modelData from '../components/Data/modelData';
+import { motion } from 'framer-motion';
 
 const Models = () => {
   const models = modelData.map((model) => {
@@ -14,13 +13,13 @@ const Models = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
-          type: "spring",
+          type: 'spring',
           bounce: 0.1,
 
           duration: 1.5,
         }}
         key={model.id}
-        className="bg-slate-800 lg:p-8 lg:m-5 rounded-[12px] relative hover:scale-105 "
+        className="bg-slate-800 lg:p-8 lg:m-5 rounded-[12px] relative hover:scale-105  "
       >
         <Link to={`/models/${model.id}`}>
           <div>
@@ -40,13 +39,13 @@ const Models = () => {
   });
   return (
     <Fragment>
-      <h1 className="text-slate-200  text-2xl lg:text-5xl font-black text-center  pt-16">
-        {" "}
+      <h1 className="text-slate-200  text-2xl lg:text-5xl font-black text-center  ">
+        {' '}
         Select your model
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5 rounded-lg ">
-        {" "}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5 rounded-lg mx-auto max-w-screen-2xl">
+        {' '}
         {models}
       </div>
     </Fragment>
